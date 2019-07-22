@@ -5,11 +5,13 @@ from forms import AddUserForm
 # Init Flask
 app = Flask(__name__)
 
+#app = Flask(__name__)
+heroku = Heroku(app)
 # configure connection from flask to postgresql database
 #original
 #app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://localhost/homework_users'
 
-app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:Hamster@localhost/homework_users'
+#app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:Hamster@localhost/homework_users'
 
 #This line triggers the html page to reload the java scripts
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -20,7 +22,7 @@ app.secret_key = "dbd3"
 @app.route('/index')
 def index():
     users = User.query.all()
-    
+
     return render_template('index.html', title='Home', users=users)
 
 
