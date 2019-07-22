@@ -207,7 +207,7 @@
             .append("circle")
             .attr("cx", function (d, data) { return x(d.experience_yr); } )
             .attr("cy", function (d) { return y(d.hw1_hrs); } )
-            .attr("r", function (d) { return 1.5*d.occ; })
+            .attr("r", function (d) { return 0.1*d.age; })
             .style("fill", "#69b3a2")
 
 
