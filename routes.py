@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, url_for, redirect, jsonify
 from models import db, User
 from forms import AddUserForm
+from flask_heroku import Heroku
 
 # Init Flask
 app = Flask(__name__)
